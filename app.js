@@ -18,4 +18,10 @@ sumArray = function(array) {
   console.table(array);
   console.log('\"' + array[0] + ',' + array[1] + ',' + array[2] + ' was passed in as an array of numbers, and ' + sum(array[0] + array[1], array[2]) + ' is their sum.\"');
   return sum(array[0] + array[1], array[2]);
-}
+};
+
+multiplyArray = function(array) {
+  console.table(array);
+  console.log('\"' + array[0] + ', ' + array[1] + ', ' + array[2] + ' have a product of ' + multiply(array[0] * array[1], array[2]) + '.\"');
+  return multiply(array[0] * array[1], array[2]);
+};
