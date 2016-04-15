@@ -19,7 +19,7 @@ function sumAndMultiply(e, f, g) {
   multiplyVarTwo.textContent = ('\"The numbers ' + e + ' and ' + f + ' and ' + g + ' have a product of ' + product + '.\"');
   return [add, product];
 };
-
+// Hopefully we figured out this POS code to not change out textContent in sum and multiply
  function sumArray(array) {
   console.table(array);
   var arraySum = 0;
