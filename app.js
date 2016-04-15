@@ -9,19 +9,28 @@ multiply = function (numberOne, numberTwo) {
 };
 
 sumAndMultiply = function(numberOne, numberTwo, numberThree) {
-  console.log('\"' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' sum to ' + sum(numberOne + numberTwo, numberThree) + '.\"');
-  console.log('\"The numbers ' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' have a product of ' + multiply(numberOne * numberTwo, numberThree) + '.\"');
-  return [sum(numberOne + numberTwo, numberThree), multiply(numberOne * numberTwo, numberThree)];
+  var add = sum(sum(numberOne, numberTwo), numberThree);
+  var product = multiply(multiply(numberOne, numberTwo), numberThree);
+  console.log('\"' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' sum to ' + add + '.\"');
+  console.log('\"The numbers ' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' have a product of ' + product + '.\"');
+  return [add, product];
 };
 
 sumArray = function(array) {
   console.table(array);
-  console.log('\"' + array[0] + ',' + array[1] + ',' + array[2] + ' was passed in as an array of numbers, and ' + sum(array[0] + array[1], array[2]) + ' is their sum.\"');
-  return sum(array[0] + array[1], array[2]);
+  var arraySum = 0;
+  for( i = 0; i < array.length; i++) {
+    arraySum += array[i];
+  }
+  console.log('\"' + array.join(', ') + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.\"')
 };
 
 multiplyArray = function(array) {
   console.table(array);
-  console.log('\"' + array[0] + ', ' + array[1] + ', ' + array[2] + ' have a product of ' + multiply(array[0] * array[1], array[2]) + '.\"');
-  return multiply(array[0] * array[1], array[2]);
+  var arrayProduct = 1;
+  for ( i = 0; i < array.length; i++) {
+    arrayProduct *= array[i];
+  }
+  console.log('\"' + array.join(', ') + ' have a product of ' + arrayProduct + '.\"');
+  return arrayProduct;
 };
