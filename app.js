@@ -1,36 +1,43 @@
-sum = function (numberOne, numberTwo) {
-  //console.log('\"The sum of ' + numberOne + ' and ' + numberTwo + ' is ' + (numberOne + numberTwo) + '.\"');
-  return numberOne + numberTwo;
+function sum(a, b) {
+  var sumVar  = document.getElementById('sumId')
+  sumVar.textContent = ('\"The sum of ' + a + ' and ' + b + ' is ' + (a + b) + '.\"')
+  return a + b;
 };
 
-multiply = function (numberOne, numberTwo) {
-  //console.log('\"The prodcut of ' + numberOne + ' and ' + numberTwo + ' is ' + (numberOne * numberTwo) + '.\"');
-  return numberOne * numberTwo;
+function multiply(c, d) {
+  var multiplyVar = document.getElementById('multiplyId');
+  multiplyVar.textContent = ('\"The product of ' + c + ' and ' + d + ' is ' + (c * d) + '.\"');
+  return c * d;
 };
 
-sumAndMultiply = function(numberOne, numberTwo, numberThree) {
-  var add = sum(sum(numberOne, numberTwo), numberThree);
-  var product = multiply(multiply(numberOne, numberTwo), numberThree);
-  console.log('\"' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' sum to ' + add + '.\"');
-  console.log('\"The numbers ' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' have a product of ' + product + '.\"');
+function sumAndMultiply(e, f, g) {
+  var add = sum(sum(e, f), g);
+  var product = multiply(multiply(e, f), g);
+  var sumVarTwo = document.getElementById('sumIdTwo');
+  var multiplyVarTwo = document.getElementById('multiplyIdTwo');
+  sumVarTwo.textContent = ('\"' + e + ' and ' + f + ' and ' + g + ' sum to ' + add + '.\"');
+  multiplyVarTwo.textContent = ('\"The numbers ' + e + ' and ' + f + ' and ' + g + ' have a product of ' + product + '.\"');
   return [add, product];
 };
 
-sumArray = function(array) {
+ function sumArray(array) {
   console.table(array);
   var arraySum = 0;
   for( i = 0; i < array.length; i++) {
     arraySum += array[i];
   }
-  console.log('\"' + array.join(', ') + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.\"')
+  var sumArrayVar = document.getElementById('sumArrayId');
+  sumArrayVar.textContent = ('\"' + array.join(', ') + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.\"')
+  return arraySum;
 };
 
-multiplyArray = function(array) {
+function multiplyArray(array) {
   console.table(array);
   var arrayProduct = 1;
   for ( i = 0; i < array.length; i++) {
     arrayProduct *= array[i];
   }
-  console.log('\"' + array.join(', ') + ' have a product of ' + arrayProduct + '.\"');
+  var multiplyArrayVar = document.getElementById('multiplyArrayId');
+  multiplyArrayVar.textContent = ('\"' + array.join(', ') + ' have a product of ' + arrayProduct + '.\"');
   return arrayProduct;
 };
